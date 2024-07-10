@@ -10,7 +10,6 @@ public class DataGenerator {
     private static Faker fakerEn = new Faker(new Locale("en"));
     private static Faker fakerRu = new Faker(new Locale("ru"));
 
-    //Валидные значения
     public static String getApprovedCardNumber() {
         return "4444 4444 4444 4441";
     }
@@ -39,8 +38,6 @@ public class DataGenerator {
         return fakerEn.number().digits(3);
     }
 
-    //Невалидные значения
-    // Пустые значения
     public static String getEmptyCardNumber() {
         return "";
     }
@@ -61,7 +58,6 @@ public class DataGenerator {
         return "";
     }
 
-    //Значения, состоящие из нулей
     public static String getCardNumberWithAllZeros() {
         return "0000 0000 0000 0000";
     }
@@ -78,7 +74,6 @@ public class DataGenerator {
         return "000";
     }
 
-    //Значения из букв и спецсимволов
     public static String getCardNumberWithLettersAndSymbols() {
         return "fhhb $*)@ jkjs уолц";
     }
@@ -103,7 +98,6 @@ public class DataGenerator {
         return "*Ц?";
     }
 
-    //Другие невалидные значения
     public static String getCardNumberNotFromRange() {
         return fakerEn.business().creditCardNumber();
     }

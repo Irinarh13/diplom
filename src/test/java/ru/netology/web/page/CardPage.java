@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class CardPage {
-    // Поля
+
     private SelenideElement cardNumberField = $$(".input__inner").findBy(text("Номер карты")).$("input");
     private SelenideElement monthField = $$(".input__inner").findBy(text("Месяц")).$("input");
     private SelenideElement yearField = $$(".input__inner").findBy(text("Год")).$("input");
@@ -17,18 +17,16 @@ public class CardPage {
     private SelenideElement cvvField = $$(".input__inner").findBy(text("CVC/CVV")).$("input");
     private SelenideElement sendRequestButton = $$("button").findBy(text("Продолжить"));
 
-    //Уведомления об итоге отправки формы
     private SelenideElement successOperationNotification = $$(".notification__content").findBy(text("Операция одобрена Банком."));
     private SelenideElement failOperationNotification = $$(".notification__content").findBy(text("Ошибка! Банк отказал в проведении операции."));
 
-    //Ошибки верификации
     private SelenideElement verificationErrorNumber = $$(".input__inner").findBy(text("Номер карты")).$(".input__sub");
     private SelenideElement verificationErrorMonth = $$(".input__inner").findBy(text("Месяц")).$(".input__sub");
     private SelenideElement verificationErrorYear = $$(".input__inner").findBy(text("Год")).$(".input__sub");
     private SelenideElement verificationErrorOwner = $$(".input__inner").findBy(text("Владелец")).$(".input__sub");
     private SelenideElement verificationErrorCVV = $$(".input__inner").findBy(text("CVC/CVV")).$(".input__sub");
 
-    //Заполнение формы
+
     public void fillInCardInfo(String cardNumber, String month, String year, String cardOwner, String cvv) {
         cardNumberField.sendKeys(cardNumber);
         monthField.sendKeys(month);
