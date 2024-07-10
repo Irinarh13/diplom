@@ -12,7 +12,9 @@
 2. Откройте проект в IntelliJ IDEA;
 3. Запустить Docker;
 4. Для запуска контейнеров нужно ввести команду в терминале - docker compose up;
-5. Для запуска приложения в новой вкладке терминала нужно ввести команду - java -jar artifacts/aqa-shop.jar;
+5. Для запуска приложения в новой вкладке терминала нужно ввести команду:
+* Для MySQL: java "-Dspring.datasource.url=jdbc:mysql://localhost:3306/app" -jar artifacts/aqa-shop.jar;   
+* Для PostgreSQL: java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app" -jar artifacts/aqa-shop.jar;
 6. Для запуска автотестов в новой вкладке терминала нужно ввести команду - ./gradlew clean test --info (по умолчанию запускается MySQL)
 * ./gradlew test -Ddb.url=jdbc:postgresql://localhost:5432/app - для запуска PostgreSQL;
 7. После автотестов, в новой вкладке терминала ввести команду - ./gradlew allureserve (для генерации отчетов на Allure);
