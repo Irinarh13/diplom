@@ -9,8 +9,8 @@ import java.sql.Statement;
 
 public class DBConnector {
     private static String dbUrl = System.getProperty("db.url");
-    private static String dbUser = System.getProperty("db.user");
-    private static String dbPass = System.getProperty("db.pass");
+    private static String dbUser = System.getProperty("app.user");
+    private static String dbPass = System.getProperty("app.password");
 
     public static PaymentData getLastPaymentData(String tableName) throws SQLException {
         String paymentSQL = "SELECT id, status FROM " + tableName + " ORDER BY created DESC LIMIT 1";
